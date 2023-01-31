@@ -1,0 +1,36 @@
+.main{
+    width: 30%;
+    height: 50vh;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin: auto;
+    margin-top: 4rem;
+}
+.heading{
+    text-align: center;
+    padding-top: 2rem;
+}
+.count{
+    text-align: center;
+    font-size: 30px;
+}
+.button{
+    display: flex;
+    height: 5vh;
+    justify-content: space-evenly;
+}
+.inc{
+    background-color: green;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.dec{
+ background-color: red;
+ border: none;
+ color: white;
+ cursor: pointer;
+}
+.info{
+    text-align: center;
+    margin-top: 3rem;
+}
