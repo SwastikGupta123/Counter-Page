@@ -4,15 +4,32 @@ import "./Counter.css";
 function Counter() {
     const [counter, setCounter] = useState(0);
     const [flag, setFlag] = useState(true)
+    const arr= ['green','blue','red'];
+    let clr;
+    if(counter<=4){
+      clr = arr[0]
+    }
+    else if(counter<=9){
+      clr = arr[1]
+    }
+    else{
+      clr = arr[2];
+    }
 
   const increaseCounter=()=>{
     setCounter(prev=>prev+1)
     if(counter>0){
         setFlag(true)
     }
+    if(counter>8){
+      setFlag(false)
+    }
   }
   const decreaseCounter=()=>{
       setCounter(prev=>prev-1)
+      if(counter>2 && counter<10){
+        setFlag(true)
+      }
       if(counter<2){
           setFlag(false)
       }
@@ -22,9 +39,11 @@ function Counter() {
     <div>
       <div className="main">
         <h1 className="heading">Counter</h1>
-        <p className="count">{counter}</p>
+        <p className="count" style={{color:`${clr}`}}>{counter}</p>
         <div className="button">
-          <button className="inc" onClick={increaseCounter}>Increament</button>
+          {
+            flag ? <button className="inc" onClick={increaseCounter}>Increament</button> : <button className="inc" onClick={()=>increaseCounter()} disabled>Increament</button>
+          }
           {
             flag ? <button className="dec" onClick={decreaseCounter}>Decreament</button>:<button className="dec" onClick={()=>decreaseCounter()} disabled>Decreament</button>
           }
