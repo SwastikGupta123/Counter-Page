@@ -3,7 +3,7 @@ import "./Counter.css";
 
 function Counter() {
     const [counter, setCounter] = useState(0);
-    const [flag, setFlag] = useState(true)
+    const [flag, setFlag] = useState(false)
     const [flag2, setFlag2] = useState(true)
     
     const arr= ['green','blue','red'];
@@ -19,7 +19,7 @@ function Counter() {
     }
 
   const increaseCounter=()=>{
-    if(counter>0){
+    if(counter>-1){
       setFlag(true)
     }
     if(counter>8){
